@@ -365,10 +365,19 @@ do
             :AddColorPicker("OutlineColor", { Default = self.Library.Scheme.OutlineColor })
         groupbox:AddLabel("字体颜色"):AddColorPicker("FontColor", { Default = self.Library.Scheme.FontColor })
         groupbox:AddDropdown("FontFace", {
-            Text = "字体",
-            Default = "Code",
-            Values = { "BuilderSans", "Code", "Fantasy", "Gotham", "Jura", "Roboto", "RobotoMono", "SourceSans" },
-        })
+    Text = "选择字体",
+    Default = "Code",
+    Values = {
+        {Text = "构建无衬线体", Value = "BuilderSans"},
+        {Text = "代码字体", Value = "Code"},
+        {Text = "奇幻字体", Value = "Fantasy"},
+        {Text = "哥谭字体", Value = "Gotham"},
+        {Text = "朱拉字体", Value = "Jura"},
+        {Text = "机器人字体", Value = "Roboto"},
+        {Text = "机器人等宽字体", Value = "RobotoMono"},
+        {Text = "源无衬线体", Value = "SourceSans"}
+    },
+})
 
         local ThemesArray = {}
         for Name, Theme in pairs(self.BuiltInThemes) do
